@@ -1,0 +1,42 @@
+ont-family:'Fraunces',Georgia,serif;font-size:40px;font-weight:680;margin-bottom:16px}
+.plano.destaque .ppreco{color:var(--gold2)}
+.plano ul{list-style:none;margin-bottom:22px;flex:1}
+.plano li{padding:7px 0 7px 28px;position:relative;color:var(--mut);font-size:14px}
+.plano li::before{content:"✓";position:absolute;left:2px;color:var(--c2);font-weight:800}
+.plano li.plus::before{content:"◆";color:var(--gold);font-size:11px;top:11px}
+.plano li strong{color:var(--txt)}
+.plano .cta{width:100%;text-align:center;padding:14px 10px;font-size:15px}
+.plano .cta.ghost{background:transparent;color:var(--txt);border:1px solid var(--line);box-shadow:none}
+.plano .cta.ghost:hover{border-color:var(--gold)}
+@media(max-width:700px){.planos{grid-template-columns:1fr}}
+.garantia{display:flex;gap:16px;align-items:center;max-width:640px;margin:34px auto 0;text-align:left;
+background:#10151F;border:1px solid var(--line);border-radius:16px;padding:18px 20px}
+.garantia .selo{font-size:34px}
+.garantia p{color:var(--mut);font-size:14px}
+details{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin-bottom:12px}
+details summary{cursor:pointer;font-weight:700;font-size:15.5px;list-style:none;display:flex;justify-content:space-between;gap:12px}
+details summary::after{content:"+";color:var(--gold);font-size:20px;font-weight:400}
+details[open] summary::after{content:"–"}
+details p{color:var(--mut);font-size:14.5px;margin-top:12px}
+.autor{display:grid;grid-template-columns:200px 1fr;gap:34px;align-items:center;
+background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:34px}
+.autor img{width:200px;height:200px;border-radius:50%;object-fit:cover;border:3px solid var(--gold);
+box-shadow:0 10px 40px rgba(245,182,46,.18)}
+.autor h3{font-family:'Fraunces',Georgia,serif;font-size:24px;font-weight:680;margin-bottom:4px}
+.autor .cargo{color:var(--gold2);font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:14px}
+.cred{list-style:none;margin:0 0 18px}
+.cred li{padding:6px 0 6px 28px;position:relative;color:var(--mut);font-size:14.5px}
+.cred li::before{content:"◆";position:absolute;left:2px;color:var(--gold);font-size:11px;top:10px}
+.btn-li{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);color:var(--txt);
+text-decoration:none;font-weight:700;font-size:14px;padding:10px 20px;border-radius:10px;transition:border-color .15s}
+.btn-li:hover{border-color:var(--gold)}
+@media(max-width:700px){.autor{grid-template-columns:1fr;text-align:center}.autor img{margin:0 auto}.cred li{text-align:left}}
+footer{border-top:1px solid var(--line);padding:34px 0 46px;color:#5B6678;font-size:12.5px;text-align:center}
+footer p{max-width:760px;margin:6px auto}
+.reveal{opacity:0;transform:translateY(14px);transition:all .5s ease}
+.reveal.on{opacity:1;transform:none}
+@media(max-width:860px){.g3{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.g3,.g2{grid-template-columns:1fr}section{padding:54px 0}.item-entrega .valor{display:none}}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+a.cta:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+</style></head><body><header class="hero"><div class="wrap"><div class="spine" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div><p class="eyebrow" style="margin-top:26px">Pack completo · acesso imediato</p><h1>A empresa inteira<br>em <em style="font-style:normal;color:var(--gold2)">6 telas</em> de decisão.</h1><p class="sub">Planilha pronta, dashboards executivos e os prompts que os geram no Claude — o sistema que tira sua empresa do achismo, sem Power BI, sem mensalidade, sem curso de 40 horas.</p><div class="preco-badge"><span class="de">R$ 297</span><span class="por">R$ 27<span class="cent">,00</span></span></div><div><a class="cta" href="#oferta">Quero o pack · a partir de R$ 27<small>pagamento único · sem mensalidade</small></a></div><p class="risco">🔒 Compra protegida · 7 dias de garantia incondicional</p></div></header><section><div class="wrap"><div class="secao-head reveal"><h2>Sua empresa fatura — mas você <em style="font-style:normal;color:var(--c4)">decide no escuro</em>.</h2></div><div class="grid g3"><div class="card reveal"><span class="tag-cor" style="background:var(--c4)"></span><h3>O número certo chega tarde</h3><p>Você descobre que o mês foi ruim quando ele já acabou — e a planilha que "resume tudo" ninguém abre.</p></div><div class="card reveal"><span class="tag-cor" style="background:var(--c3)"></span><h3>Vende, mas não recebe</h3><p>Empresa não quebra só por vender pouco. Quebra por não cobrar certo o que vendeu — e ninguém enxerga o aging.</p></div><div class="card reveal"><span class="tag-cor" style="background:var(--c5)"></span><h3>Ferramenta virou obstáculo</h3><p>Power BI parece exigir um analista dedicado; Excel puro vira colcha de retalhos. E a decisão continua no feeling.</p></div></div></div></section><section style="background:#0D1017;border-top:1px solid var(--line);border-bottom:1px solid var(--line)"><div class="wrap"><div class="secao-head reveal"><p class="eyebrow">O sistema nervoso da empresa</p><h2>Os 6 dashboards essenciais</h2><p>Cada tela responde uma pergunta de negócio — e nenhuma decisão importante fica no achismo.</p></div><div class="grid g3"><div class="card reveal"><span class="dash-num" style="color:var(--c1)">1</span><h3>Vendas</h3><p>Estamos vendendo o suficiente? Quem vende, o que vende — e o pipeline cobre o mês que vem?</p></div
