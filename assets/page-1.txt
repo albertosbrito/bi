@@ -1,0 +1,70 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Pack 6 Dashboards Essenciais — R$ 27</title><meta name="description" content="Planilha, dashboards prontos, 8 prompts e kit Power BI para transformar sua empresa em 6 telas de decisão. Acesso imediato por R$ 27."><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560;9..144,680&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"><style>
+:root{
+--bg:#0A0C10; --panel:#11151D; --line:#212A38; --txt:#EDF1F7; --mut:#8B97A8;
+--gold:#F5B62E; --gold2:#FFCE5C;
+--c1:#3B82F6; --c2:#22C55E; --c3:#F59E0B; --c4:#EF4444; --c5:#A78BFA; --c6:#22D3EE;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--txt);font-family:'Inter',system-ui,sans-serif;font-size:16px;line-height:1.6}
+.serif{font-family:'Fraunces',Georgia,serif}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+.spine{display:flex;gap:6px;justify-content:center}
+.spine i{width:34px;height:5px;border-radius:99px;display:block}
+.spine i:nth-child(1){background:var(--c1)} .spine i:nth-child(2){background:var(--c2)}
+.spine i:nth-child(3){background:var(--c3)} .spine i:nth-child(4){background:var(--c4)}
+.spine i:nth-child(5){background:var(--c5)} .spine i:nth-child(6){background:var(--c6)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold)}
+h1,h2{font-family:'Fraunces',Georgia,serif;font-weight:680;line-height:1.12;letter-spacing:.2px}
+h1{font-size:clamp(34px,6vw,58px)}
+h2{font-size:clamp(26px,4vw,38px)}
+.sub{color:var(--mut);font-size:clamp(16px,2.2vw,19px);max-width:640px;margin:18px auto 0}
+.cta{display:inline-block;background:linear-gradient(180deg,var(--gold2),var(--gold));color:#171204;
+font-weight:800;font-size:17px;padding:16px 38px;border-radius:14px;text-decoration:none;
+box-shadow:0 8px 30px rgba(245,182,46,.28);transition:transform .12s ease}
+.cta:hover{transform:translateY(-2px)}
+.cta small{display:block;font-weight:600;font-size:12px;opacity:.75}
+.risco{color:var(--mut);font-size:13px;margin-top:12px}
+section{padding:76px 0}
+header.hero{padding:64px 0 72px;text-align:center;border-bottom:1px solid var(--line);
+background:radial-gradient(900px 420px at 50% -80px, rgba(245,182,46,.10), transparent 65%)}
+.preco-badge{display:inline-flex;align-items:baseline;gap:10px;margin:26px 0 8px}
+.preco-badge .de{color:var(--mut);text-decoration:line-through;font-size:17px}
+.preco-badge .por{font-family:'Fraunces',Georgia,serif;font-size:52px;font-weight:680;color:var(--gold2)}
+.preco-badge .cent{font-size:22px}
+.grid{display:grid;gap:16px}
+.g3{grid-template-columns:repeat(3,1fr)} .g2{grid-template-columns:repeat(2,1fr)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px}
+.card h3{font-size:16px;font-weight:700;margin-bottom:6px}
+.card p{color:var(--mut);font-size:14.5px}
+.tag-cor{width:34px;height:5px;border-radius:99px;margin-bottom:14px;display:block}
+.center{text-align:center}
+.secao-head{text-align:center;max-width:680px;margin:0 auto 40px}
+.secao-head p{color:var(--mut);margin-top:10px}
+.item-entrega{display:flex;gap:16px;align-items:flex-start}
+.item-entrega .icone{min-width:44px;height:44px;border-radius:12px;background:#171D28;border:1px solid var(--line);
+display:grid;place-items:center;font-size:20px}
+.item-entrega .valor{margin-left:auto;color:var(--mut);font-size:13px;white-space:nowrap;padding-top:4px}
+.dash-num{font-family:'Fraunces',Georgia,serif;font-size:26px;font-weight:680;opacity:.9}
+.passos{counter-reset:p}
+.passo{position:relative;padding-left:0}
+.passo .num{font-family:'Fraunces',Georgia,serif;font-size:34px;color:var(--gold);font-weight:680}
+.quem li{list-style:none;padding:9px 0 9px 30px;position:relative;color:var(--mut);font-size:15px}
+.quem li::before{content:"✓";position:absolute;left:0;color:var(--c2);font-weight:800}
+.quem.nao li::before{content:"✕";color:var(--c4)}
+.oferta{background:linear-gradient(180deg,#141926,#0E1219);border:1px solid #33405A;border-radius:24px;
+padding:46px 30px;text-align:center;position:relative;overflow:hidden}
+.oferta::before{content:"";position:absolute;inset:0;background:radial-gradient(500px 200px at 50% 0, rgba(245,182,46,.12), transparent 70%);pointer-events:none}
+.soma{max-width:520px;margin:26px auto;text-align:left}
+.soma .linha{display:flex;justify-content:space-between;padding:9px 4px;border-bottom:1px dashed var(--line);font-size:15px}
+.soma .linha span:last-child{color:var(--mut)}
+.soma .total{border-bottom:none;font-weight:800;font-size:17px}
+.soma .total span:last-child{color:var(--gold2);text-decoration:line-through}
+.planos{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:860px;margin:30px auto 0;text-align:left}
+.plano{background:#10151F;border:1px solid var(--line);border-radius:20px;padding:28px;position:relative;display:flex;flex-direction:column}
+.plano.destaque{border-color:var(--gold);box-shadow:0 12px 44px rgba(245,182,46,.14)}
+.plano .selo-rec{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:linear-gradient(180deg,var(--gold2),var(--gold));
+color:#171204;font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;padding:5px 16px;border-radius:99px;white-space:nowrap}
+.plano h3{font-family:'Fraunces',Georgia,serif;font-size:22px;font-weight:680}
+.plano .pdesc{color:var(--mut);font-size:13.5px;margin:4px 0 14px}
+.plano .ppreco{f
