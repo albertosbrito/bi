@@ -30,10 +30,12 @@
     Promise.all([
       Promise.all([1,2,3,4].map(numero => carregarTexto(`assets/page-${numero}.txt`))),
       carregarPartes('assets/img/essencial', 5, 'b64'),
-      carregarPartes('assets/img/avancado', 4, 'b64')
-    ]).then(([partesPagina, partesEssencial, partesAvancado]) => {
+      carregarPartes('assets/img/avancado', 4, 'b64'),
+      carregarPartes('assets/img/autor', 2, 'b64')
+    ]).then(([partesPagina, partesEssencial, partesAvancado, partesAutor]) => {
       const imagemEssencial = `data:image/webp;base64,${partesEssencial.join('')}`;
       const imagemAvancado = `data:image/webp;base64,${partesAvancado.join('')}`;
+      const imagemAutor = `data:image/webp;base64,${partesAutor.join('')}`;
 
       const estilosProdutos = `
         .produto-visual{background:#0D1017;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -73,6 +75,7 @@
 
       let pagina = partesPagina.join('');
       pagina = pagina.replace('https://www.linkedin.com/in/albertosbrito', 'https://www.linkedin.com/in/eusoualbaertobrito/');
+      pagina = pagina.replace('https://avatars.githubusercontent.com/u/201661274?v=4', imagemAutor);
       pagina = pagina.replace('</style>', `${estilosProdutos}</style>`);
       pagina = pagina.replace('<section id="oferta">', `${secaoProdutos}<section id="oferta">`);
 
