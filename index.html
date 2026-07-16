@@ -16,12 +16,67 @@
 <body>
   <main id="status"><div><div class="loader"></div><strong>Carregando a página…</strong><p>Isso deve levar apenas um instante.</p></div></main>
   <script>
-    Promise.all([1,2,3,4].map(n => fetch(`assets/page-${n}.txt`).then(r => {
-      if (!r.ok) throw new Error(`Falha ao carregar parte ${n}`);
-      return r.text();
-    }))).then(partes => {
+    const carregarTexto = async (url) => {
+      const resposta = await fetch(url);
+      if (!resposta.ok) throw new Error(`Falha ao carregar ${url}`);
+      return resposta.text();
+    };
+
+    const carregarPartes = (prefixo, quantidade, extensao) =>
+      Promise.all(Array.from({length: quantidade}, (_, indice) =>
+        carregarTexto(`${prefixo}-${String(indice).padStart(2, '0')}.${extensao}`)
+      ));
+
+    Promise.all([
+      Promise.all([1,2,3,4].map(numero => carregarTexto(`assets/page-${numero}.txt`))),
+      carregarPartes('assets/img/essencial', 5, 'b64'),
+      carregarPartes('assets/img/avancado', 4, 'b64')
+    ]).then(([partesPagina, partesEssencial, partesAvancado]) => {
+      const imagemEssencial = `data:image/webp;base64,${partesEssencial.join('')}`;
+      const imagemAvancado = `data:image/webp;base64,${partesAvancado.join('')}`;
+
+      const estilosProdutos = `
+        .produto-visual{background:#0D1017;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+        .produtos-showcase{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start}
+        .produto-mockup{margin:0;background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:12px;position:relative;overflow:hidden}
+        .produto-mockup.destaque{border-color:var(--gold);box-shadow:0 12px 44px rgba(245,182,46,.12)}
+        .produto-mockup img{display:block;width:100%;height:auto;border-radius:14px;background:#070B11}
+        .produto-mockup figcaption{padding:16px 8px 8px;display:grid;gap:3px}
+        .produto-mockup figcaption strong{font-family:'Fraunces',Georgia,serif;font-size:22px}
+        .produto-mockup figcaption span{color:var(--mut);font-size:14px}
+        .produto-selo{position:absolute;top:22px;right:22px;background:linear-gradient(180deg,var(--gold2),var(--gold));color:#171204;font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:5px 12px;border-radius:99px;z-index:2}
+        @media(max-width:700px){.produtos-showcase{grid-template-columns:1fr}.produto-selo{top:18px;right:18px}}
+      `;
+
+      const secaoProdutos = `
+        <section class="produto-visual">
+          <div class="wrap">
+            <div class="secao-head reveal">
+              <p class="eyebrow">Veja antes de escolher</p>
+              <h2>Conheça os dois packs</h2>
+              <p>Compare o Essencial e o Avançado e escolha o nível certo para sua operação.</p>
+            </div>
+            <div class="produtos-showcase">
+              <figure class="produto-mockup reveal">
+                <img src="${imagemEssencial}" alt="Apresentação do Pack 6 Dashboards Essenciais" loading="lazy" decoding="async">
+                <figcaption><strong>Pack Essencial</strong><span>Planilha pronta, 6 dashboards, 8 prompts e Kit Power BI.</span></figcaption>
+              </figure>
+              <figure class="produto-mockup destaque reveal">
+                <span class="produto-selo">Recomendado</span>
+                <img src="${imagemAvancado}" alt="Apresentação do Pack 6 Dashboards Avançado" loading="lazy" decoding="async">
+                <figcaption><strong>Pack Avançado</strong><span>Tudo do Essencial, mais automação, Power Query e conexão com banco de dados.</span></figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+      `;
+
+      let pagina = partesPagina.join('');
+      pagina = pagina.replace('</style>', `${estilosProdutos}</style>`);
+      pagina = pagina.replace('<section id="oferta">', `${secaoProdutos}<section id="oferta">`);
+
       document.open();
-      document.write(partes.join(''));
+      document.write(pagina);
       document.close();
     }).catch(erro => {
       document.getElementById('status').innerHTML = '<div><strong>Não foi possível carregar a página.</strong><p>Atualize a tela em alguns segundos.</p></div>';
